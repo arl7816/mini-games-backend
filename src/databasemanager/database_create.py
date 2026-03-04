@@ -11,7 +11,10 @@ def main() -> None:
 
 
     try:
-        cur.execute("CREATE TABLE User(email VARCHAR(30) PRIMARY KEY, username VARCHAR(30) NOT NULL, password VARCHAR(50) NOT NULL);")
+        cur.execute("""CREATE TABLE User(
+                    email VARCHAR(30) PRIMARY KEY, 
+                    username VARCHAR(30) UNIQUE NOT NULL, 
+                    password VARCHAR(50) NOT NULL);""")
         print("Created User Table")
     except: 
         print("User Table already exists, skipping this")
