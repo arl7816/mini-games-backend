@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     # optional attributes
     APP_PORT: int = 8000 
     DEBUG_MODE: bool = False
+    RELOAD: bool = False
 
     # look for a .env file
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
